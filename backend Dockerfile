@@ -1,0 +1,12 @@
+# Use a base image with Python installed 
+FROM python:latest 
+# Set working directory 
+WORKDIR /app 
+# Copy requirements.txt 
+COPY requirements.txt . 
+# Install dependencies 
+RUN pip install -r requirements.txt 
+# Copy the rest of the application code 
+COPY . . 
+# Expose port (if backend needs to be exposed, otherwise this step can be omitted) 
+EXPOSE 8000
